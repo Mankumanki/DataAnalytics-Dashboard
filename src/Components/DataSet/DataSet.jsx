@@ -9,7 +9,7 @@ function DataSet() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    if (ExcelContext.xData) {
+    if (ExcelContext?.xData) {
       setLoad(0);
     }
     console.log("Hi");
@@ -23,22 +23,23 @@ function DataSet() {
     try {
       setLoad(1);
       const rows = await xlsx(file);
-      ExcelContext.setXData(rows);
+      ExcelContext?.setXData(rows);
     } catch (err) {
       alert("Error Reading File. Please try again");
+
       console.log(err);
     }
   }
 
   /*Handle Page Logic*/
   function movePageLeft() {
-    if (ExcelContext?.xData.length != 0 && page != 1) {
+    if (ExcelContext?.xData?.length != 0 && page != 1) {
       setPage(page - 1);
     }
   }
   function movePageRight() {
-    const len = Math.ceil((ExcelContext?.xData.length - 1) / 100);
-    if (ExcelContext?.xData.length != 0 && page < len) {
+    const len = Math.ceil((ExcelContext?.xData?.length - 1) / 100);
+    if (ExcelContext?.xData?.length != 0 && page < len) {
       setPage(page + 1);
     }
   }
@@ -53,9 +54,9 @@ function DataSet() {
               <i className="fa-solid fa-angle-left"></i>
             </a>
             <p className="text-white bg-slate-400 bg-opacity-20 p-2 rounded-md">
-              {ExcelContext?.xData.length == 0 ? 0 : page}{" "}
+              {ExcelContext?.xData?.length == 0 ? 0 : page}{" "}
               <span className="text-slate-400">
-                of {Math.ceil((ExcelContext?.xData.length - 1) / 100)}
+                of {Math.ceil((ExcelContext?.xData?.length - 1) / 100)}
               </span>
             </p>
             <a className="text-white" role="button" onClick={movePageRight}>
@@ -90,7 +91,7 @@ function DataSet() {
             }}
           />
         </div>
-        {ExcelContext?.xData.length == 0 ? (
+        {ExcelContext?.xData?.length == 0 ? (
           <Skeleton />
         ) : (
           <div className="w-full h-full flex justify-center overflow-x-auto">
@@ -103,7 +104,7 @@ function DataSet() {
                         className="flex items-center justify-center text-center text-black font-semibold h-10 w-32 overflow-hidden"
                         key={val}
                       >
-                        {val.length > 10 ? `${val.slice(0, 10)}...` : val}
+                        {val?.length > 10 ? `${val.slice(0, 10)}...` : val}
                       </th>
                     );
                   })}

@@ -6,8 +6,8 @@ function useConstructData(key, dataLimit) {
   const header = ExcelContext?.xData[0];
 
   return useMemo(() => {
-    const len = ExcelContext?.xData.length - 1;
-    const xData = ExcelContext?.xData.slice(1, len + 1);
+    const len = ExcelContext?.xData?.length - 1;
+    const xData = ExcelContext?.xData?.slice(1, len + 1);
     const obj = {};
     const axis = [];
     const values = [];
@@ -15,7 +15,7 @@ function useConstructData(key, dataLimit) {
     const setMap = new Map();
     header?.forEach((val, idx) => {
       if (key == val) {
-        xData.forEach((val) => {
+        xData?.forEach((val) => {
           let value = setMap.get(val[idx]);
           setMap.set(val[idx], value == undefined ? 1 : value + 1);
         });
