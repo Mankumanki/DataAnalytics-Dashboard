@@ -1,0 +1,14 @@
+{
+  "header_links": [
+    {
+      "title": "Dataset",
+      "url": "/dataset",
+      "icon": "fa-database"
+    },
+    {
+      "title": "Dashboard",
+      "url": "/",
+      "icon": "fa-chart-line"
+    }
+  ]
+}
