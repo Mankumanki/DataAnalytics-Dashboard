@@ -1,8 +1,36 @@
-# React + Vite
+# Data Anlaytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In the project directory, you can run:
 
-Currently, two official plugins are available:
+Assessment Implementation:
+1) Two routes Dashboard-'/' and Dataset '/dataset' for loading the data from .xlsx file. It supports excel file only having .xlsx
+2) It can parse any excel sheet it is a generic dashboard with header defined for creating filters and table headers else it will pick data as header for filtering.
+3) Added data limiter field so that graphs don't take much computation power.
+4) The data is not stored in database but in react context api if refreshed the data will be removed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm run dev
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
+
+The page will reload when you make changes.
+You may also see any lint errors in the console.
+
+npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+Steps To Run:
+
+1) Pull the github repo.
+2) type npm run dev on terminal of VS Code to run on localhost.
+
+Deployment:
+
+Deployed on Netlify
+https://celadon-squirrel-ede39c.netlify.app/
+
+
+
