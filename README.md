@@ -2,7 +2,7 @@
 
 In the project directory, you can run:
 
-Assessment Implementation:
+Implementation:
 1) Two routes Dashboard-'/' and Dataset '/dataset' for loading the data from .xlsx file. It supports excel file only having .xlsx
 2) It can parse any excel sheet it is a generic dashboard with header defined for creating filters and table headers else it will pick data as header for filtering.
 3) Added data limiter field so that graphs don't take much computation power.
